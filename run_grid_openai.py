@@ -5,7 +5,7 @@ Design: prompt variant {main, paraphrase, reverse} x shots {0, 2, 5} = 9 cells.
 Primary cell (pre-specified) = main x 0-shot; the other 8 are robustness checks.
 
 - main        : your CODEBOOK and make_prompt, word for word
-- paraphrase  : same instructions, reworded label definitions (DEFINITIONS_PARAPHRASE)
+- paraphrase  : same instructions, paraphrases label definitions (DEFINITIONS_PARAPHRASE)
 - reverse     : coding scheme flipped (1 = absent, 0 = present); read_answer flips the
                 codes back, so every cell is saved on the same scale (1 = present)
 
@@ -85,11 +85,6 @@ Procedure:
 
 DEFINITIONS = '''
 3. LABELS
-
-Label: MORAL RHETORIC
-Definition: The speaker explicitly or implicitly judges an action, actor, or policy as morally right/wrong, good/evil, just/unjust, or as a duty/violation — i.e., the justification appeals to values, not only to consequences.
-If the paragraph is not discussing something being right or wrong, in other words if it is a rational, abstract description of a state of the matter, it should not be coded as moral.
-Negative example: "When the United States hesitates or sends mixed signals, we do not create stability; we invite aggression. Let's be clear about that. History is replete with examples of those who hesitate or send mixed signals. Therefore, American leadership remains the cornerstone of global security."
 
 
 Label: MORAL RHETORIC
@@ -403,8 +398,8 @@ def run_cell(validation, variant="main", shots=0, examples=None, save=True):
         outs = list(tqdm(pool.map(one, range(len(prompts))), total=len(prompts),
                          desc=f"{variant}, {shots}-shot"))
 
-    pred = pd.DataFrame([{"para_id": pid, "variant": variant, "shots": shots, **o}
-                         for pid, o in zip(data["para_id"], outs)])
+    pred = pd.DataFrame([{"para_id": pid, "text": text, "variant": variant, "shots": shots,**o}
+                     for pid, text, o in zip(data["para_id"], data["text"], outs)])
     if save:
         os.makedirs(OUT_DIR, exist_ok=True)
         stem = f"{OUT_DIR}/{variant}_{shots}shot_validation"

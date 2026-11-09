@@ -18,10 +18,14 @@ Procedure:
 
 3. LABELS
 
+
 Label: MORAL RHETORIC
-Definition: The speaker explicitly or implicitly judges an action, actor, or policy as morally right/wrong, good/evil, just/unjust, or as a duty/violation — i.e., the justification appeals to values, not only to consequences.
-If the paragraph is not discussing something being right or wrong, in other words if it is a rational, abstract description of a state of the matter, it should not be coded as moral.
-Negative example: "When the United States hesitates or sends mixed signals, we do not create stability; we invite aggression. Let's be clear about that. History is replete with examples of those who hesitate or send mixed signals. Therefore, American leadership remains the cornerstone of global security."
+Definition: The speaker, explicitly or implicitly,
+* judges an action, actor, or policy as morally right or wrong, good or evil, or just or unjust, OR
+* frames an action as a moral duty or a moral violation.
+Negative Examples:
+* rational, abstract descriptions of a state of affairs
+* arguments that rest on benefits, costs or consequences 
 
 
 Label: CARE
