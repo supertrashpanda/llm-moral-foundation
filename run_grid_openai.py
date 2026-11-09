@@ -141,8 +141,65 @@ Examples:
 * references to societal decline, or erosion of values
 '''
 
-# TODO: reword the definitions (same substance) before running the "paraphrase" cells.
-DEFINITIONS_PARAPHRASE = DEFINITIONS
+
+DEFINITIONS_PARAPHRASE = '''
+3. LABELS
+ 
+Label: MORAL RHETORIC
+Definition: The speaker evaluates an action, an actor, or a policy in moral terms, stated outright or implied: as right or wrong, good or evil, just or unjust, or as an obligation or a violation. In other words, the argument rests on values and not only on outcomes.
+A paragraph that only describes how things are, in a detached and analytical way, without saying that something is right or wrong, should not be coded as moral.
+Negative example: "When the United States hesitates or sends mixed signals, we do not create stability; we invite aggression. Let's be clear about that. History is replete with examples of those who hesitate or send mixed signals. Therefore, American leadership remains the cornerstone of global security."
+ 
+ 
+Label: CARE
+Definition: The paragraph stresses
+* on the positive side: looking after, sheltering, rescuing, or standing up for others, or showing them compassion, OR
+* on the negative side: injury, pain, destruction, armed conflict, or loss of life.
+Examples:
+* repeatedly mentioning assistance to families or keeping citizens safe
+* stressing support for people who are vulnerable (such as children, veterans, or the elderly)
+* arguing that a policy will damage working families or cause needless pain
+* presenting an issue through its human toll (for example, "people are struggling," "lives are at risk")
+ 
+Label: FAIRNESS
+Definition: The paragraph stresses
+* on the positive side: justice, equal treatment, fairness, or truthfulness, OR
+* on the negative side: injustice, unequal treatment, corruption, or deceit.
+Examples:
+* demanding equal opportunity or even-handed treatment
+* arguing that a system is rigged, unfair, or tilted against particular groups
+* pointing to discrimination, inequality, or corruption within institutions
+ 
+Label: LOYALTY
+Definition: The paragraph stresses
+* on the positive side: unity, love of country, national identity, solidarity, support, the nation, or the family, OR
+* on the negative side: betrayal of one's own group, division, threats to the group, desertion, or revolt (against authority).
+Examples:
+* calls for the nation to stand together
+* mentions of patriotism or pride in the country
+* condemning actions that split the country or weaken its unity
+* charging that political actors have betrayed the American people
+ 
+Label: AUTHORITY
+Definition: The paragraph stresses
+* on the positive side: law, order, respect for institutions, duty, or obligation, OR
+* on the negative side: illegitimacy, misuse of power, betrayal of one's role, revolt (against authority), chaos, or disorder.
+Examples:
+* stressing the need to uphold the Constitution, the rule of law, or democratic norms
+* urging respect for institutions (such as the courts, Congress, or law enforcement)
+* arguing that leaders are misusing their power or breaking the law
+* mentions of lawlessness, violations of the Constitution, or a collapse of order
+ 
+Label: SANCTITY
+Definition: The paragraph stresses
+* on the positive side: dignity, moral integrity, sacred values, purity, preservation, or peace of mind, OR
+* on the negative side: moral decline, degradation, disgust, repulsiveness, filth, or something revolting.
+Examples:
+* invoking human dignity or moral responsibility
+* presenting issues as questions of moral integrity or fundamental values
+* mentions of a society in decline or of values being worn away
+'''
+ 
 
 
 def codebook(variant="main"):
