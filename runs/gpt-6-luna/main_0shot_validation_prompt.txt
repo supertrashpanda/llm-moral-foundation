@@ -56,6 +56,8 @@ Examples:
 * references to patriotism or national pride
 * criticism of actions that divide the nation or undermine our unity
 * accusations that political actors have betrayed the American people
+Negative Examples:
+* simple mention of the United States of America or USA or US or State is not sufficient for presence of morality or any of the moral foundations, unless it comes with a moral appeal expressed in the remainder of the paragraph, e.g.: "living in the United States of America” does not count as loyalty 
 
 Label: AUTHORITY
 Definition: The paragraph emphasizes
