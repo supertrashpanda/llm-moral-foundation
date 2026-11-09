@@ -92,6 +92,15 @@ If the paragraph is not discussing something being right or wrong, in other word
 Negative example: "When the United States hesitates or sends mixed signals, we do not create stability; we invite aggression. Let's be clear about that. History is replete with examples of those who hesitate or send mixed signals. Therefore, American leadership remains the cornerstone of global security."
 
 
+Label: MORAL RHETORIC
+Definition: The speaker, explicitly or implicitly,
+* judges an action, actor, or policy as morally right or wrong, good or evil, or just or unjust, OR
+* frames an action as a moral duty or a moral violation.
+Negative Examples:
+* rational, abstract descriptions of a state of affairs
+* arguments that rest on benefits, costs or consequences 
+
+
 Label: CARE
 Definition: The paragraph emphasizes
 * positive: protection, compassion, helping, saving, or defending others, OR
@@ -146,9 +155,12 @@ DEFINITIONS_PARAPHRASE = '''
 3. LABELS
  
 Label: MORAL RHETORIC
-Definition: The speaker evaluates an action, an actor, or a policy in moral terms, stated outright or implied: as right or wrong, good or evil, just or unjust, or as an obligation or a violation. In other words, the argument rests on values and not only on outcomes.
-A paragraph that only describes how things are, in a detached and analytical way, without saying that something is right or wrong, should not be coded as moral.
-Negative example: "When the United States hesitates or sends mixed signals, we do not create stability; we invite aggression. Let's be clear about that. History is replete with examples of those who hesitate or send mixed signals. Therefore, American leadership remains the cornerstone of global security."
+Definition: The speaker, whether stating it outright or implying it,
+* evaluates an action, an actor, or a policy in moral terms: as right or wrong, good or evil, or just or unjust, OR
+* presents an action as a moral obligation or a moral transgression.
+Negative Examples:
+* detached, analytical accounts of how things are
+* arguments based on advantages, drawbacks, or outcomes
  
  
 Label: CARE
