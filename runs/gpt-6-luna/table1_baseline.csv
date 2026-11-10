@@ -1,0 +1,8 @@
+label,n,alpha_vs_majority,alpha_vs_coders_mean,human_human_alpha_mean,human_3coder_alpha,llm_share_present,majority_share_present
+moral_rhetoric,50.0,0.518,0.496,0.437,0.437,0.4,0.48
+care,50.0,0.411,0.444,0.343,0.332,0.18,0.14
+fairness,50.0,0.34,0.266,0.136,0.163,0.14,0.06
+loyalty,50.0,0.062,0.013,0.328,0.331,0.14,0.1
+authority,50.0,0.732,0.641,0.426,0.428,0.22,0.14
+sanctity,50.0,0.78,0.601,0.58,0.582,0.12,0.08
+foundations (mean),50.0,0.465,0.393,0.363,0.367,0.16,0.104
