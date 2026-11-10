@@ -1,0 +1,95 @@
+
+
+1. TASK
+You're an expert political scientist analyzing U.S. congressional floor speeches. You need to decide whether a paragraph from the speeches uses moral rhetoric, and if it does, which moral foundations it draws on.
+Code six labels, each as 0 (present) or 1 (absent): MORAL RHETORIC, CARE, FAIRNESS, LOYALTY, AUTHORITY, SANCTITY.
+
+2. CODING APPROACH
+* The unit of analysis is the paragraph. Read the full paragraph before coding.
+* Code each label for presence (0) or absence (1).
+* Code a label as 0 if the paragraph expresses its meaning at least once.
+* A paragraph can be coded for several moral foundations at the same time.
+
+Procedure:
+1. Read the full paragraph.
+2. Code MORAL RHETORIC as 0 or 1.
+3. If MORAL RHETORIC is 0, code each of the five moral foundations as 0 or 1. At least one foundation must be 0.
+4. If MORAL RHETORIC is 1, all five moral foundations must be 1.
+
+3. LABELS
+
+
+Label: MORAL RHETORIC
+Definition: The speaker, explicitly or implicitly,
+* judges an action, actor, or policy as morally right or wrong, good or evil, or just or unjust, OR
+* frames an action as a moral duty or a moral violation.
+Negative Examples:
+* rational, abstract descriptions of a state of affairs
+* arguments that rest on benefits, costs or consequences 
+
+
+
+Label: CARE
+Definition: The paragraph emphasizes
+* positive: protection, compassion, helping, saving, or defending others, OR
+* negative: harm, suffering, damage, war, killing.
+Examples:
+* repeated references to helping families, protecting citizens
+* emphasis on supporting vulnerable groups (e.g., children, veterans, elderly)
+* claims that a policy will hurt working families or cause unnecessary suffering
+* framing an issue in terms of human cost (e.g., "people are struggling," "lives are at risk")
+
+Label: FAIRNESS
+Definition: The paragraph emphasizes
+* positive: justice, equality, fairness, honesty, OR
+* negative: injustice, inequality, corruption, dishonesty.
+Examples:
+* calls for equal opportunity or fair treatment
+* claims that a system is rigged, unfair, or stacked against certain groups
+* references to discrimination, inequality, or corruption in institutions
+
+Label: LOYALTY
+Definition: The paragraph emphasizes
+* positive: unity, patriotism, solidarity, support, nation, family, OR
+* negative: betrayal (in-group), division, threats to the group, abandonment, rebellion (against authority).
+Examples:
+* appeals to national unity
+* references to patriotism or national pride
+* criticism of actions that divide the nation or undermine our unity
+* accusations that political actors have betrayed the American people
+Negative Examples:
+* simple mention of the United States of America or USA or US or State is not sufficient for presence of morality or any of the moral foundations, unless it comes with a moral appeal expressed in the remainder of the paragraph
+
+Label: AUTHORITY
+Definition: The paragraph emphasizes
+* positive: law, order, institutional respect, duty, obligation, OR
+* negative: illegitimacy, abuse of power, betrayal (against your role), rebellion (against authority), chaos, disorder.
+Examples:
+* emphasis on upholding the Constitution, rule of law, or democratic norms
+* calls to respect institutions (courts, Congress, law enforcement, etc.)
+* claims that leaders are abusing power or acting unlawfully
+* references to lawlessness, constitutional violations, or breakdown of order
+Negative Examples:
+* commending or appreciating someone for their leadership does not count as authority unless it explicitly mentions examples of actions taken by that individual in authority position 
+
+
+Label: SANCTITY
+Definition: The paragraph emphasizes
+* positive: dignity, moral integrity, sacred values, purity, preservation, serenity, OR
+* negative: moral decay, degradation, disgust, repulsiveness, dirtiness, revoltingness.
+Examples:
+* appeals to human dignity or moral responsibility
+* framing issues as matters of moral integrity or core values
+* references to societal decline, or erosion of values
+
+Negative Examples:
+* mentions of mess, dirtiness, or purity are in itself not sufficient to be coded as presence of sanctity unless they refer to moral character or moral phenomenon
+
+
+
+
+Paragraph to code:
+"Every American should be outraged at how the Trump administration is treating anyone who dares to stand in their way. Whether you are a U.S. Senator, a U.S. Citizen, or an immigrant, no one is protected by the Trump regime. It is my job to ensure that my constituents, immigrants, and all Americans are protected from this administration's horrible actions."
+
+Answer in JSON format. First give the evidence: for each label, a short quote from the paragraph that shows it, or "" if the label is 1. Then give the labels.
+{"evidence": {"moral_rhetoric": "quote or empty", "care": "quote or empty", "fairness": "quote or empty", "loyalty": "quote or empty", "authority": "quote or empty", "sanctity": "quote or empty"}, "moral_rhetoric": 0 or 1, "care": 0 or 1, "fairness": 0 or 1, "loyalty": 0 or 1, "authority": 0 or 1, "sanctity": 0 or 1}

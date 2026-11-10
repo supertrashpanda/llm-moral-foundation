@@ -1,0 +1,88 @@
+
+
+1. TASK
+You're an expert political scientist analyzing U.S. congressional floor speeches. You need to decide whether a paragraph from the speeches uses moral rhetoric, and if it does, which moral foundations it draws on.
+Code six labels, each as 1 (present) or 0 (absent): MORAL RHETORIC, CARE, FAIRNESS, LOYALTY, AUTHORITY, SANCTITY.
+
+2. CODING APPROACH
+* The unit of analysis is the paragraph. Read the full paragraph before coding.
+* Code each label for presence (1) or absence (0).
+* Code a label as 1 if the paragraph expresses its meaning at least once.
+* A paragraph can be coded for several moral foundations at the same time.
+
+Procedure:
+1. Read the full paragraph.
+2. Code MORAL RHETORIC as 1 or 0.
+3. If MORAL RHETORIC is 1, code each of the five moral foundations as 1 or 0. At least one foundation must be 1.
+4. If MORAL RHETORIC is 0, all five moral foundations must be 0.
+
+3. LABELS
+ 
+Label: MORAL RHETORIC
+Definition: The speaker, whether stating it outright or implying it,
+* evaluates an action, an actor, or a policy in moral terms: as right or wrong, good or evil, or just or unjust, OR
+* presents an action as a moral obligation or a moral transgression.
+Negative Examples:
+* detached, analytical accounts of how things are
+* arguments based on advantages, drawbacks, or outcomes
+ 
+Label: CARE
+Definition: The paragraph stresses
+* on the positive side: looking after, sheltering, rescuing, or standing up for others, or showing them compassion, OR
+* on the negative side: injury, pain, destruction, armed conflict, or loss of life.
+Examples:
+* repeatedly mentioning assistance to families or keeping citizens safe
+* stressing support for people who are vulnerable (such as children, veterans, or the elderly)
+* arguing that a policy will damage working families or cause needless pain
+* presenting an issue through its human toll (for example, "people are struggling," "lives are at risk")
+ 
+Label: FAIRNESS
+Definition: The paragraph stresses
+* on the positive side: justice, equal treatment, fairness, or truthfulness, OR
+* on the negative side: injustice, unequal treatment, corruption, or deceit.
+Examples:
+* demanding equal opportunity or even-handed treatment
+* arguing that a system is rigged, unfair, or tilted against particular groups
+* pointing to discrimination, inequality, or corruption within institutions
+ 
+Label: LOYALTY
+Definition: The paragraph stresses
+* on the positive side: unity, love of country solidarity, supporting one's own, the nation, or the family, OR
+* on the negative side: betrayal of one's own group, division, threats to the group, desertion, or revolt (against authority).
+Examples:
+* calls for the nation to stand together
+* mentions of patriotism or pride in the country
+* condemning actions that split the country or weaken its unity
+* charging that political actors have betrayed the American people
+Negative Examples:
+* merely naming the United States (America, the USA, the US) or a state does not by itself indicate moral rhetoric or any moral foundation; it counts only if the rest of the paragraph makes a moral appeal
+ 
+Label: AUTHORITY
+Definition: The paragraph stresses
+* on the positive side: law, order, respect for institutions, duty, or obligation, OR
+* on the negative side: illegitimacy, misuse of power, betrayal of one's role, revolt (against authority), chaos, or disorder.
+Examples:
+* stressing the need to uphold the Constitution, the rule of law, or democratic norms
+* urging respect for institutions (such as the courts, Congress, or law enforcement)
+* arguing that leaders are misusing their power or breaking the law
+* mentions of lawlessness, violations of the Constitution, or a collapse of order
+Negative Examples:
+* praising or thanking someone for their leadership does not count as authority unless the paragraph explicitly describes actions that person took in a position of authority
+ 
+Label: SANCTITY
+Definition: The paragraph stresses
+* on the positive side: dignity, moral integrity, sacred values, purity, preservation, or peace of mind, OR
+* on the negative side: moral decline, degradation, disgust, repulsiveness, filth, or something revolting.
+Examples:
+* invoking human dignity or moral responsibility
+* presenting issues as questions of moral integrity or fundamental values
+* mentions of a society in decline or of values being worn away
+Negative Examples:
+* references to mess, filth, or purity do not by themselves indicate sanctity unless they concern moral character or a moral matter
+
+
+Paragraph to code:
+"Every American should be outraged at how the Trump administration is treating anyone who dares to stand in their way. Whether you are a U.S. Senator, a U.S. Citizen, or an immigrant, no one is protected by the Trump regime. It is my job to ensure that my constituents, immigrants, and all Americans are protected from this administration's horrible actions."
+
+Answer in JSON format. First give the evidence: for each label, a short quote from the paragraph that shows it, or "" if the label is 0. Then give the labels.
+{"evidence": {"moral_rhetoric": "quote or empty", "care": "quote or empty", "fairness": "quote or empty", "loyalty": "quote or empty", "authority": "quote or empty", "sanctity": "quote or empty"}, "moral_rhetoric": 1 or 0, "care": 1 or 0, "fairness": 1 or 0, "loyalty": 1 or 0, "authority": 1 or 0, "sanctity": 1 or 0}

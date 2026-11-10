@@ -50,7 +50,7 @@ Examples:
 
 Label: LOYALTY
 Definition: The paragraph emphasizes
-* positive: unity, patriotism, national identity, solidarity, support, nation, family, OR
+* positive: unity, patriotism, solidarity, support, nation, family, OR
 * negative: betrayal (in-group), division, threats to the group, abandonment, rebellion (against authority).
 Examples:
 * appeals to national unity
@@ -70,7 +70,7 @@ Examples:
 * claims that leaders are abusing power or acting unlawfully
 * references to lawlessness, constitutional violations, or breakdown of order
 Negative Examples:
-*commending or appreciating someone for their leadership does not count as authority unless it explicitly mentions examples of actions taken by that individual in authority position 
+* commending or appreciating someone for their leadership does not count as authority unless it explicitly mentions examples of actions taken by that individual in authority position 
 
 
 Label: SANCTITY

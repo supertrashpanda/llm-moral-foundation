@@ -1,0 +1,17 @@
+{
+  "variant": "main",
+  "shots": 2,
+  "primary_cell": false,
+  "params": {
+    "model": "gpt-6-luna",
+    "temperature": 0,
+    "seed": 502,
+    "reasoning_effort": "none"
+  },
+  "dropped_params": [],
+  "model_versions": [
+    "gpt-6-luna"
+  ],
+  "n": 48,
+  "finished": "2026-11-09 23:53:36"
+}

@@ -42,7 +42,13 @@ VARIANTS = ["main", "paraphrase", "reverse"]
 SHOTS = [0, 2, 5]
 PRIMARY = ("main", 0)
 
-client = OpenAI(max_retries=5)
+client = None
+
+def get_client():
+    global client
+    if client is None:
+        client = OpenAI(max_retries=5)
+    return client
 
 # ---------------------------------------------------------------- codebook
 # Sections 1-2 state the coding direction, so the reverse variant has its own version.
@@ -118,7 +124,7 @@ Examples:
 
 Label: LOYALTY
 Definition: The paragraph emphasizes
-* positive: unity, patriotism, national identity, solidarity, support, nation, family, OR
+* positive: unity, patriotism, solidarity, support, nation, family, OR
 * negative: betrayal (in-group), division, threats to the group, abandonment, rebellion (against authority).
 Examples:
 * appeals to national unity
@@ -138,7 +144,7 @@ Examples:
 * claims that leaders are abusing power or acting unlawfully
 * references to lawlessness, constitutional violations, or breakdown of order
 Negative Examples:
-*commending or appreciating someone for their leadership does not count as authority unless it explicitly mentions examples of actions taken by that individual in authority position 
+* commending or appreciating someone for their leadership does not count as authority unless it explicitly mentions examples of actions taken by that individual in authority position 
 
 
 Label: SANCTITY
@@ -168,7 +174,6 @@ Negative Examples:
 * detached, analytical accounts of how things are
 * arguments based on advantages, drawbacks, or outcomes
  
- 
 Label: CARE
 Definition: The paragraph stresses
 * on the positive side: looking after, sheltering, rescuing, or standing up for others, or showing them compassion, OR
@@ -190,13 +195,15 @@ Examples:
  
 Label: LOYALTY
 Definition: The paragraph stresses
-* on the positive side: unity, love of country, national identity, solidarity, support, the nation, or the family, OR
+* on the positive side: unity, love of country solidarity, supporting one's own, the nation, or the family, OR
 * on the negative side: betrayal of one's own group, division, threats to the group, desertion, or revolt (against authority).
 Examples:
 * calls for the nation to stand together
 * mentions of patriotism or pride in the country
 * condemning actions that split the country or weaken its unity
 * charging that political actors have betrayed the American people
+Negative Examples:
+* merely naming the United States (America, the USA, the US) or a state does not by itself indicate moral rhetoric or any moral foundation; it counts only if the rest of the paragraph makes a moral appeal
  
 Label: AUTHORITY
 Definition: The paragraph stresses
@@ -207,6 +214,8 @@ Examples:
 * urging respect for institutions (such as the courts, Congress, or law enforcement)
 * arguing that leaders are misusing their power or breaking the law
 * mentions of lawlessness, violations of the Constitution, or a collapse of order
+Negative Examples:
+* praising or thanking someone for their leadership does not count as authority unless the paragraph explicitly describes actions that person took in a position of authority
  
 Label: SANCTITY
 Definition: The paragraph stresses
@@ -216,9 +225,9 @@ Examples:
 * invoking human dignity or moral responsibility
 * presenting issues as questions of moral integrity or fundamental values
 * mentions of a society in decline or of values being worn away
+Negative Examples:
+* references to mess, filth, or purity do not by themselves indicate sanctity unless they concern moral character or a moral matter
 '''
- 
-
 
 def codebook(variant="main"):
     instructions = INSTRUCTIONS["reverse" if variant == "reverse" else "normal"]
@@ -356,7 +365,7 @@ def check_params(prompt):
     """Send one test request; if the model rejects temperature or seed, drop it and say so."""
     for _ in range(3):
         try:
-            client.chat.completions.create(messages=[{"role": "user", "content": prompt}], **PARAMS)
+            get_client().chat.completions.create(messages=[{"role": "user", "content": prompt}], **PARAMS)
             break
         except BadRequestError as e:
             bad = [p for p in ("temperature", "seed") if p in PARAMS and p in str(e)]
@@ -373,7 +382,7 @@ def check_params(prompt):
 def ask_llm(prompt, paragraph=None, variant="main", retries=3):
     for attempt in range(retries):
         try:
-            resp = client.chat.completions.create(
+            resp = get_client().chat.completions.create(
                 messages=[{"role": "user", "content": prompt}], **PARAMS)
             text = resp.choices[0].message.content
             out = read_answer(text, paragraph, variant)
