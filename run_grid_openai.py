@@ -96,6 +96,7 @@ Negative Examples:
 * arguments that rest on benefits, costs or consequences 
 
 
+
 Label: CARE
 Definition: The paragraph emphasizes
 * positive: protection, compassion, helping, saving, or defending others, OR
@@ -124,6 +125,8 @@ Examples:
 * references to patriotism or national pride
 * criticism of actions that divide the nation or undermine our unity
 * accusations that political actors have betrayed the American people
+Negative Examples:
+* simple mention of the United States of America or USA or US or State is not sufficient for presence of morality or any of the moral foundations, unless it comes with a moral appeal expressed in the remainder of the paragraph
 
 Label: AUTHORITY
 Definition: The paragraph emphasizes
@@ -134,6 +137,9 @@ Examples:
 * calls to respect institutions (courts, Congress, law enforcement, etc.)
 * claims that leaders are abusing power or acting unlawfully
 * references to lawlessness, constitutional violations, or breakdown of order
+Negative Examples:
+*commending or appreciating someone for their leadership does not count as authority unless it explicitly mentions examples of actions taken by that individual in authority position 
+
 
 Label: SANCTITY
 Definition: The paragraph emphasizes
@@ -143,6 +149,11 @@ Examples:
 * appeals to human dignity or moral responsibility
 * framing issues as matters of moral integrity or core values
 * references to societal decline, or erosion of values
+
+Negative Examples:
+* mentions of mess, dirtiness, or purity are in itself not sufficient to be coded as presence of sanctity unless they refer to moral character or moral phenomenon
+
+
 '''
 
 
