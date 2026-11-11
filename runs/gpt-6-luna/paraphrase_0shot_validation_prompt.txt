@@ -82,7 +82,7 @@ Negative Examples:
 
 
 Paragraph to code:
-"Every American should be outraged at how the Trump administration is treating anyone who dares to stand in their way. Whether you are a U.S. Senator, a U.S. Citizen, or an immigrant, no one is protected by the Trump regime. It is my job to ensure that my constituents, immigrants, and all Americans are protected from this administration's horrible actions."
+"Well, this has been quite a list of assaults by this government on freedom of the press."
 
 Answer in JSON format. First give the evidence: for each label, a short quote from the paragraph that shows it, or "" if the label is 0. Then give the labels.
 {"evidence": {"moral_rhetoric": "quote or empty", "care": "quote or empty", "fairness": "quote or empty", "loyalty": "quote or empty", "authority": "quote or empty", "sanctity": "quote or empty"}, "moral_rhetoric": 1 or 0, "care": 1 or 0, "fairness": 1 or 0, "loyalty": 1 or 0, "authority": 1 or 0, "sanctity": 1 or 0}

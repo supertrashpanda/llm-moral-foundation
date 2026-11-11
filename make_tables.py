@@ -15,7 +15,7 @@ import krippendorff
 # ---------------------------------------------------------------- settings
 OUT_DIR = "runs/gpt-6-luna"     # folder with {variant}_{shots}shot_validation.csv files
 HUMAN = ("https://raw.githubusercontent.com/supertrashpanda/llm-moral-rhetoric-tutorial/"
-         "refs/heads/main/50_results2.csv")   # validation set with each coder's labels
+         "refs/heads/main/small_test_set.csv")   # the SAME validation set the LLM runs used
 CODERS = ["Yunfan", "Wiktoria", "Carlos"]
 LABELS = ["moral_rhetoric", "care", "fairness", "loyalty", "authority", "sanctity"]
 FOUNDATIONS = LABELS[1:]
@@ -36,12 +36,29 @@ def alpha(*codes):
     return krippendorff.alpha(reliability_data=data, level_of_measurement="nominal")
 
 
-def load_humans(path=HUMAN):
-    h = pd.read_csv(path)
+def load_humans(path=None):
+    """path=None uses mt.HUMAN as it is set now (so mt.HUMAN = "..." in a notebook works)."""
+    h = pd.read_csv(path or HUMAN)
     for l in LABELS:
         cols = [f"{HUMAN_COL[l]}_{c}" for c in CODERS]
         h[f"{l}_majority"] = (h[cols].sum(axis=1) >= 2).astype(int)
     return h
+
+
+def _check_overlap(h, c, what):
+    """c: a results DataFrame (with para_id) or a collection of para_ids.
+    Returns the para_ids shared with the human file; raises a clear error if there are none."""
+    ids = set(c["para_id"]) if isinstance(c, pd.DataFrame) else set(c)
+    shared = set(h["para_id"]) & ids
+    if not shared:
+        raise ValueError(
+            f"No para_id in {what} matches the human-coded file ({HUMAN}).\n"
+            f"  human file ids: {h['para_id'].head(2).tolist()}\n"
+            f"  {what} ids:  {sorted(ids)[:2]}\n"
+            "Set mt.HUMAN to the validation set the LLM runs were made on.")
+    if len(shared) < len(ids):
+        print(f"note: {len(ids) - len(shared)} paragraph(s) in {what} are not in the human file and are skipped")
+    return shared
 
 
 def load_cell(variant, shots, rep=1):
@@ -60,7 +77,9 @@ def _summary_rows(per_label):
 def table1(humans=None):
     """Baseline condition vs. humans, one row per label, plus the mean over foundations."""
     h = load_humans() if humans is None else humans
-    m = h.merge(load_cell(*BASELINE), on="para_id")
+    base = load_cell(*BASELINE)
+    _check_overlap(h, base, "main_0shot_validation.csv")
+    m = h.merge(base, on="para_id")
     rows = []
     for l in LABELS:
         llm = m[l]
@@ -107,6 +126,7 @@ def table2(humans=None, labels=("moral_rhetoric", "foundations (mean)")):
     except FileNotFoundError:
         print("note: no baseline run 2 file found; skipping the noise-floor row")
     common = set.intersection(*[set(c["para_id"]) for c in cells.values()])
+    common &= _check_overlap(h, cells[BASELINE], "main_0shot_validation.csv")
     # drop paragraphs with a parse/API error in any condition
     for c in cells.values():
         common -= set(c.loc[c[LABELS].isna().any(axis=1), "para_id"])

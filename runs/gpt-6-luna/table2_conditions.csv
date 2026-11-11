@@ -1,19 +1,19 @@
 condition,label,alpha_with_baseline,alpha_vs_majority,delta_vs_baseline,delta_ci_low,delta_ci_high,share_present
-main x 0-shot (baseline),moral_rhetoric,,0.491,,,,0.356
-main x 0-shot (baseline),foundations (mean),,0.44,,,,0.138
-main x 2-shot,moral_rhetoric,0.802,0.574,0.083,-0.102,0.263,0.311
-main x 2-shot,foundations (mean),0.695,0.38,-0.06,-0.234,0.107,0.12
-main x 5-shot,moral_rhetoric,0.808,0.584,0.092,-0.082,0.28,0.356
-main x 5-shot,foundations (mean),0.801,0.501,0.061,-0.03,0.162,0.133
-paraphrase x 0-shot,moral_rhetoric,0.953,0.542,0.051,0.0,0.188,0.378
-paraphrase x 0-shot,foundations (mean),0.741,0.463,0.023,-0.064,0.118,0.147
-paraphrase x 2-shot,moral_rhetoric,0.901,0.48,-0.012,-0.159,0.123,0.311
-paraphrase x 2-shot,foundations (mean),0.733,0.439,-0.001,-0.082,0.07,0.138
-paraphrase x 5-shot,moral_rhetoric,0.808,0.676,0.185,0.042,0.4,0.356
-paraphrase x 5-shot,foundations (mean),0.767,0.532,0.092,-0.027,0.222,0.138
-reverse x 0-shot,moral_rhetoric,0.858,0.542,0.051,-0.084,0.219,0.378
-reverse x 0-shot,foundations (mean),0.724,0.43,-0.01,-0.125,0.116,0.178
-reverse x 2-shot,moral_rhetoric,0.676,0.46,-0.032,-0.257,0.214,0.422
-reverse x 2-shot,foundations (mean),0.801,0.477,0.037,-0.057,0.155,0.164
-reverse x 5-shot,moral_rhetoric,0.682,0.466,-0.025,-0.249,0.209,0.467
-reverse x 5-shot,foundations (mean),0.725,0.44,0.0,-0.123,0.158,0.196
+main x 0-shot (baseline),moral_rhetoric,,0.601,,,,0.5
+main x 0-shot (baseline),foundations (mean),,0.622,,,,0.16
+main x 2-shot,moral_rhetoric,0.921,0.683,0.081,0.0,0.203,0.46
+main x 2-shot,foundations (mean),0.907,0.63,0.008,-0.05,0.07,0.164
+main x 5-shot,moral_rhetoric,0.802,0.56,-0.041,-0.211,0.133,0.52
+main x 5-shot,foundations (mean),0.784,0.553,-0.069,-0.173,0.017,0.188
+paraphrase x 0-shot,moral_rhetoric,0.761,0.675,0.073,-0.117,0.266,0.58
+paraphrase x 0-shot,foundations (mean),0.841,0.577,-0.045,-0.167,0.066,0.2
+paraphrase x 2-shot,moral_rhetoric,0.921,0.518,-0.084,-0.212,0.0,0.54
+paraphrase x 2-shot,foundations (mean),0.81,0.562,-0.06,-0.177,0.052,0.196
+paraphrase x 5-shot,moral_rhetoric,0.642,0.636,0.035,-0.197,0.276,0.56
+paraphrase x 5-shot,foundations (mean),0.769,0.556,-0.066,-0.172,0.027,0.184
+reverse x 0-shot,moral_rhetoric,0.759,0.505,-0.096,-0.304,0.091,0.62
+reverse x 0-shot,foundations (mean),0.825,0.555,-0.067,-0.147,0.007,0.208
+reverse x 2-shot,moral_rhetoric,0.801,0.636,0.035,-0.148,0.235,0.56
+reverse x 2-shot,foundations (mean),0.71,0.601,-0.021,-0.144,0.101,0.236
+reverse x 5-shot,moral_rhetoric,0.681,0.675,0.073,-0.155,0.303,0.58
+reverse x 5-shot,foundations (mean),0.689,0.53,-0.092,-0.204,0.022,0.252

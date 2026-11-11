@@ -103,7 +103,7 @@ Paragraph: "Even after the United States supreme_court ruled last week that the 
 Answer: {"evidence": {"moral_rhetoric": "", "care": "", "fairness": "", "loyalty": "", "authority": "\"the President doesn't have the authority to do that\"", "sanctity": ""}, "moral_rhetoric": 1, "care": 0, "fairness": 0, "loyalty": 0, "authority": 1, "sanctity": 0}
 
 Paragraph to code:
-"How can this not terrify people? Are there people in the White House who have calculators? Our brothers and sisters here, do they really think the debt markets want to buy that much more U.S. Sovereign money?"
+"Well, this has been quite a list of assaults by this government on freedom of the press."
 
 Answer in JSON format. First give the evidence: for each label, a short quote from the paragraph that shows it, or "" if the label is 0. Then give the labels.
 {"evidence": {"moral_rhetoric": "quote or empty", "care": "quote or empty", "fairness": "quote or empty", "loyalty": "quote or empty", "authority": "quote or empty", "sanctity": "quote or empty"}, "moral_rhetoric": 1 or 0, "care": 1 or 0, "fairness": 1 or 0, "loyalty": 1 or 0, "authority": 1 or 0, "sanctity": 1 or 0}

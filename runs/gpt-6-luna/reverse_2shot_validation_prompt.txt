@@ -98,7 +98,7 @@ Paragraph: "Every American should be outraged at how the Trump administration is
 Answer: {"evidence": {"moral_rhetoric": "\u201coutraged\u201d at the administration\u2019s \u201chorrible actions\u201d", "care": "\u201censure that my constituents, immigrants, and all Americans are protected\u201d", "fairness": "\u201cWhether you are a U.S. Senator, a U.S. Citizen, or an immigrant, no one is protected\u201d", "loyalty": "", "authority": "\u201cIt is my job to ensure\u201d that people \u201care protected\u201d", "sanctity": ""}, "moral_rhetoric": 0, "care": 0, "fairness": 0, "loyalty": 1, "authority": 0, "sanctity": 1}
 
 Paragraph to code:
-"How can this not terrify people? Are there people in the White House who have calculators? Our brothers and sisters here, do they really think the debt markets want to buy that much more U.S. Sovereign money?"
+"Well, this has been quite a list of assaults by this government on freedom of the press."
 
 Answer in JSON format. First give the evidence: for each label, a short quote from the paragraph that shows it, or "" if the label is 1. Then give the labels.
 {"evidence": {"moral_rhetoric": "quote or empty", "care": "quote or empty", "fairness": "quote or empty", "loyalty": "quote or empty", "authority": "quote or empty", "sanctity": "quote or empty"}, "moral_rhetoric": 0 or 1, "care": 0 or 1, "fairness": 0 or 1, "loyalty": 0 or 1, "authority": 0 or 1, "sanctity": 0 or 1}
