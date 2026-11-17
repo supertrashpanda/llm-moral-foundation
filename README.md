@@ -1,1 +1,1 @@
-<img width="2720" height="1440" alt="llm_run_grid_per_model_v4" src="https://github.com/user-attachments/assets/46daff76-4bb6-4860-b9a9-103a89836d31" />
+<img width="1512" height="891" alt="fig_design_grid" src="https://github.com/user-attachments/assets/995a50c6-4af3-4101-9c3f-3cacf1ba3171" />
