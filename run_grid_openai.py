@@ -33,7 +33,7 @@ TEMPERATURE = 0                # deterministic output (dropped if the model reje
 SEED = 502
 WORKERS = 8                    # parallel requests; set to 1 to run one at a time
 DATA = "https://raw.githubusercontent.com/supertrashpanda/llm-moral-rhetoric-tutorial/refs/heads/main/small_test_set.csv"
-EXAMPLES_FILE = "fewshot_examples.csv"   # only needed for 2- and 5-shot cells
+EXAMPLES_FILE = "data/fewshot_examples.csv"   # only needed for 2- and 5-shot cells
 OUT_DIR = f"runs/{MODEL}"
 
 LABELS = ["moral_rhetoric", "care", "fairness", "loyalty", "authority", "sanctity"]

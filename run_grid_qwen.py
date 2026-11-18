@@ -33,7 +33,7 @@ REASONING_EFFORT = "none"      # non-reasoning mode
 TEMPERATURE = 0                # deterministic output (dropped if the model rejects it)
 SEED = 502
 WORKERS = 16              # parallel requests; set to 1 to run one at a time
-EXAMPLES_FILE = "fewshot_examples.csv"   # only needed for 2- and 5-shot cells
+EXAMPLES_FILE = "data/fewshot_examples.csv"   # only needed for 2- and 5-shot cells
 OUT_DIR = f"runs/{MODEL}"
 
 LABELS = ["moral_rhetoric", "care", "fairness", "loyalty", "authority", "sanctity"]
