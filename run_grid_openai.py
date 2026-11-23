@@ -152,7 +152,7 @@ Definition: The paragraph emphasizes
 * positive: dignity, moral integrity, sacred values, purity, preservation, serenity, OR
 * negative: moral decay, degradation, disgust, repulsiveness, dirtiness, revoltingness.
 Examples:
-* appeals to human dignity or moral responsibility
+* appeals to human dignity
 * framing issues as matters of moral integrity or core values
 * references to societal decline, or erosion of values
 
