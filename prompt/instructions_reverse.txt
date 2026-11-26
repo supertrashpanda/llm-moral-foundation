@@ -1,0 +1,16 @@
+
+1. TASK
+You're an expert political scientist analyzing U.S. congressional floor speeches. You need to decide whether a paragraph from the speeches uses moral rhetoric, and if it does, which moral foundations it draws on.
+Code six labels, each as 0 (present) or 1 (absent): MORAL RHETORIC, CARE, FAIRNESS, LOYALTY, AUTHORITY, SANCTITY.
+
+2. CODING APPROACH
+* The unit of analysis is the paragraph. Read the full paragraph before coding.
+* Code each label for presence (0) or absence (1).
+* Code a label as 0 if the paragraph expresses its meaning at least once.
+* A paragraph can be coded for several moral foundations at the same time.
+
+Procedure:
+1. Read the full paragraph.
+2. Code MORAL RHETORIC as 0 or 1.
+3. If MORAL RHETORIC is 0, code each of the five moral foundations as 0 or 1. At least one foundation must be 0.
+4. If MORAL RHETORIC is 1, all five moral foundations must be 1.

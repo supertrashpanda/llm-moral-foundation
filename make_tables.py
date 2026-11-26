@@ -1,11 +1,16 @@
 """
 Build Table 1 (baseline vs. humans) and Table 2 (each condition vs. baseline) for ONE model
-from the files written by run_grid_openai.py. Needs no API key.
+from the files written by run_grid_openai.py / run_grid_claude.py. Needs no API key.
+Pick the model by its output folder (OUT_DIR); the default is set below.
 
 In a notebook (same folder as this file):
     import make_tables as mt
-    t1 = mt.table1()      # baseline measurement quality
-    t2 = mt.table2()      # condition-level results
+    t1 = mt.table1("runs/claude-haiku-5-5")      # baseline measurement quality
+    t2 = mt.table2("runs/claude-haiku-5-5")      # condition-level results
+    # or set it once:  mt.OUT_DIR = "runs/claude-haiku-5-5"; t1 = mt.table1()
+
+From a terminal (prints both tables and saves them as table1.csv / table2.csv in that folder):
+    python make_tables.py runs/claude-haiku-5-5
 """
 import itertools
 import numpy as np
@@ -15,7 +20,7 @@ import krippendorff
 # ---------------------------------------------------------------- settings
 OUT_DIR = "runs/gpt-6-luna"     # folder with {variant}_{shots}shot_validation.csv files
 HUMAN = ("https://raw.githubusercontent.com/supertrashpanda/llm-moral-rhetoric-tutorial/"
-         "refs/heads/main/small_test_set.csv")   # the SAME validation set the LLM runs used
+         "refs/heads/main/test_full.csv")   # the SAME validation set the LLM runs used
 CODERS = ["Yunfan", "Wiktoria", "Carlos"]
 LABELS = ["moral_rhetoric", "care", "fairness", "loyalty", "authority", "sanctity"]
 FOUNDATIONS = LABELS[1:]
@@ -61,8 +66,8 @@ def _check_overlap(h, c, what):
     return shared
 
 
-def load_cell(variant, shots, rep=1):
-    stem = f"{OUT_DIR}/{variant}_{shots}shot_validation" + ("" if rep == 1 else f"_rep{rep}")
+def load_cell(variant, shots, rep=1, out_dir=None):
+    stem = f"{out_dir or OUT_DIR}/{variant}_{shots}shot_validation" + ("" if rep == 1 else f"_rep{rep}")
     return pd.read_csv(f"{stem}.csv")[["para_id"] + LABELS]
 
 
@@ -74,10 +79,10 @@ def _summary_rows(per_label):
 
 
 # ---------------------------------------------------------------- Table 1
-def table1(humans=None):
+def table1(out_dir=None, humans=None):
     """Baseline condition vs. humans, one row per label, plus the mean over foundations."""
     h = load_humans() if humans is None else humans
-    base = load_cell(*BASELINE)
+    base = load_cell(*BASELINE, out_dir=out_dir)
     _check_overlap(h, base, "main_0shot_validation.csv")
     m = h.merge(base, on="para_id")
     rows = []
@@ -113,16 +118,16 @@ def _boot_delta(y, a, b, rng):
     return {l: tuple(np.nanpercentile(v, [2.5, 97.5])) for l, v in draws.items()}
 
 
-def table2(humans=None, labels=("moral_rhetoric", "foundations (mean)")):
+def table2(out_dir=None, humans=None, labels=("moral_rhetoric", "foundations (mean)")):
     """One row per condition, compared with the baseline on the paragraphs every condition coded.
     First row = baseline run 2 (noise floor). Columns: alpha with baseline, alpha vs majority,
     change vs baseline (paired-bootstrap 95% CI), share coded present.
     labels: which rows to show; use mt.LABELS + ["foundations (mean)"] for all."""
     h = load_humans() if humans is None else humans
-    cells = {(v, k): load_cell(v, k) for v in VARIANTS for k in SHOTS}
+    cells = {(v, k): load_cell(v, k, out_dir=out_dir) for v in VARIANTS for k in SHOTS}
     RERUN = ("main", "0 (run 2)")
     try:
-        cells[RERUN] = load_cell("main", 0, rep=2)
+        cells[RERUN] = load_cell("main", 0, rep=2, out_dir=out_dir)
     except FileNotFoundError:
         print("note: no baseline run 2 file found; skipping the noise-floor row")
     common = set.intersection(*[set(c["para_id"]) for c in cells.values()])
@@ -161,3 +166,15 @@ def table2(humans=None, labels=("moral_rhetoric", "foundations (mean)")):
            "delta_ci_low", "delta_ci_high", "share_present"]].round(3)
     print(f"Table 2 uses the {len(common)} paragraphs coded (without errors) in every condition.")
     return t
+
+if __name__ == "__main__":
+    import argparse, os
+    ap = argparse.ArgumentParser(description="Build Table 1 and Table 2 for one model's runs folder.")
+    ap.add_argument("out_dir", nargs="?", default=OUT_DIR,
+                    help=f"folder with the *_validation.csv files (default: {OUT_DIR})")
+    args = ap.parse_args()
+    t1 = table1(args.out_dir)
+    t2 = table2(args.out_dir)
+    print("\nTable 1\n", t1.to_string(), "\n\nTable 2\n", t2.to_string())
+    t1.to_csv(os.path.join(args.out_dir, "table1.csv"))
+    t2.to_csv(os.path.join(args.out_dir, "table2.csv"))
