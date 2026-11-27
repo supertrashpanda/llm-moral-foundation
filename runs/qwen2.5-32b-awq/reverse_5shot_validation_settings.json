@@ -1,0 +1,16 @@
+{
+  "variant": "reverse",
+  "shots": 5,
+  "primary_cell": false,
+  "params": {
+    "model": "qwen2.5-32b-awq",
+    "temperature": 0,
+    "seed": 502
+  },
+  "dropped_params": [],
+  "model_versions": [
+    "qwen2.5-32b-awq"
+  ],
+  "n": 250,
+  "finished": "2026-11-26 21:44:24"
+}
