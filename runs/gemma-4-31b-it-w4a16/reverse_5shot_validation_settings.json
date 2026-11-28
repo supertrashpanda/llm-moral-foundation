@@ -1,0 +1,22 @@
+{
+  "variant": "reverse",
+  "shots": 5,
+  "primary_cell": false,
+  "params": {
+    "model": "gemma-4-31b-it-w4a16",
+    "temperature": 0,
+    "seed": 502,
+    "extra_body": {
+      "chat_template_kwargs": {
+        "enable_thinking": false
+      }
+    }
+  },
+  "dropped_params": [],
+  "model_versions": [
+    "gemma-4-31b-it-w4a16"
+  ],
+  "prompt_hash": "17236d3d1a9c",
+  "n": 250,
+  "finished": "2026-11-27 20:36:00"
+}
