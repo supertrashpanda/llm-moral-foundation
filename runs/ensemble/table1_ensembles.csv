@@ -1,0 +1,29 @@
+ensemble,label,n,alpha_vs_majority,alpha_vs_coders_mean,human_human_alpha_mean,human_3coder_alpha,llm_share_present,majority_share_present
+without_gpt,moral_rhetoric,250.0,0.687,0.644,0.595,0.595,0.556,0.504
+without_gpt,care,250.0,0.774,0.751,0.675,0.674,0.34,0.268
+without_gpt,fairness,250.0,0.632,0.573,0.505,0.508,0.16,0.164
+without_gpt,loyalty,250.0,0.4,0.389,0.46,0.459,0.14,0.068
+without_gpt,authority,250.0,0.609,0.505,0.412,0.401,0.144,0.156
+without_gpt,sanctity,250.0,0.563,0.379,0.357,0.356,0.056,0.04
+without_gpt,foundations (mean),250.0,0.596,0.52,0.482,0.48,0.168,0.139
+without_claude,moral_rhetoric,250.0,0.695,0.657,0.595,0.595,0.568,0.504
+without_claude,care,250.0,0.774,0.751,0.675,0.674,0.34,0.268
+without_claude,fairness,250.0,0.703,0.626,0.505,0.508,0.176,0.164
+without_claude,loyalty,250.0,0.444,0.419,0.46,0.459,0.168,0.068
+without_claude,authority,250.0,0.574,0.484,0.412,0.401,0.168,0.156
+without_claude,sanctity,250.0,0.434,0.313,0.357,0.356,0.08,0.04
+without_claude,foundations (mean),250.0,0.586,0.519,0.482,0.48,0.186,0.139
+without_gemma,moral_rhetoric,250.0,0.625,0.598,0.595,0.595,0.508,0.504
+without_gemma,care,250.0,0.751,0.748,0.675,0.674,0.324,0.268
+without_gemma,fairness,250.0,0.697,0.604,0.505,0.508,0.148,0.164
+without_gemma,loyalty,250.0,0.453,0.408,0.46,0.459,0.108,0.068
+without_gemma,authority,250.0,0.588,0.474,0.412,0.401,0.14,0.156
+without_gemma,sanctity,250.0,0.514,0.37,0.357,0.356,0.064,0.04
+without_gemma,foundations (mean),250.0,0.601,0.521,0.482,0.48,0.157,0.139
+without_qwen,moral_rhetoric,250.0,0.617,0.595,0.595,0.595,0.512,0.504
+without_qwen,care,250.0,0.755,0.739,0.675,0.674,0.34,0.268
+without_qwen,fairness,250.0,0.651,0.582,0.505,0.508,0.164,0.164
+without_qwen,loyalty,250.0,0.499,0.442,0.46,0.459,0.136,0.068
+without_qwen,authority,250.0,0.557,0.477,0.412,0.401,0.14,0.156
+without_qwen,sanctity,250.0,0.471,0.318,0.357,0.356,0.072,0.04
+without_qwen,foundations (mean),250.0,0.586,0.512,0.482,0.48,0.17,0.139
